@@ -1,0 +1,49 @@
+fcalcularAposentadoria = (minimoContr, idadeMinima, idadeApose) => {
+
+
+if(tipoUsuario = 'M'){
+    minimoContr = 30 
+    idadeMinima = 57
+  
+   resultadoContr = tempoContribuicao - minimoContr
+
+    idadeApose = idadeUsuario + resultadoContr
+
+    if(idadeApose < idadeMinina){
+        resultado = nomeUsuario, ' Poderá se aposentar com ' ,idadeMinima;
+        return resultado
+
+    }
+}
+
+
+module.exports = async function (context, req) {
+  let nomeUsuario =String(req.query.nome);
+  let idadeUsuario = Number(req.query.idade);
+  let tempoContribuicao = Number(req.query.tempo);
+  let tipoUsuario = String(req.query.tipo);
+     
+
+
+  if (isNaN(idadeUsuario) || isNaN(tempoContribuicao)) {
+        return context.res.status(400).send('Formato de dados incorreto, os campos idade e tempo de contribuição aceitam somente numeros.');
+
+    };
+    let resultado1 = fcalcularAposentadoria(resultado);
+
+    context.res.json({
+        nome : nomeUsuario,
+        idade: idadeUsuario,
+        tempo: tempoContribuicao,
+        aposentadoria: resultado1
+
+    });
+
+
+}
+}
+
+
+
+
+
